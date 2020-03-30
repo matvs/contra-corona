@@ -1,0 +1,85 @@
+<style>
+    #loginForm {
+        height: 450px;
+        width: 500px;
+        background-color: #f6cd61;
+        padding: 40px
+    }
+
+    #loginForm input {
+      padding: 10px;
+
+    }
+
+    #loginForm input[type='text'] {
+      display:block;
+      width: 85%;
+      height: 50px;
+      margin: 0 auto;
+      font-size: 45px;
+      
+    }
+
+    #loginForm #join {
+      display:block;
+      width: 60%;
+      /* height: 50px; */
+      margin: 0 auto;
+      font-size: 50px;
+      color: #ffffff;
+      font-weight: bold;
+      background-color: #7bc043;
+      margin-top: 35px;
+    }
+      
+
+
+    #loginForm input[type='radio'] {
+      -webkit-transform: scale(3) translate(0, -3px);;
+        -ms-transform: scale(3) translate(0, -3px);
+            transform: scale(3) translate(0, -3px);
+            
+    }
+
+    #loginForm label {
+      font-size: 40px;
+      color: #ffffff;
+      font-weight: bold;
+      padding: 10px;
+    }
+    
+    #loginForm .mainLabel {
+      display:block;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    #loginForm .radio {
+     margin-bottom: 10px;
+     text-align: center;
+    }
+    #loginForm .radio label {
+      padding-left: 25px;
+    }
+
+    #loginForm #errorMessage{
+      font-size: 21px;
+      font-weight: bold;
+      color: #ee4035;
+      display: none;
+    }
+  
+    
+</style>
+<div>
+<form id="loginForm" onsubmit="return false;">
+    <label class="mainLabel">Name</label> 
+    <input type="text" id="name"/>
+    <label class="mainLabel">Team</label>
+    <div class="radio"><input type="radio" id="Red" name="team" value="red"> <label for="Red" style="color: #ff6f69">Red</label></div>
+     <div class="radio"><input type="radio" id="Blue" name="team" value="blue"><label for="Blue" style="color: #0392cf">Blue</label></div>
+
+    <button id="join" type="button">Join</button>
+    <p id='errorMessage'>Name cannot be empty and you need to select a team.</p>
+</form>
+
+</div>

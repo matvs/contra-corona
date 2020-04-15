@@ -153,6 +153,8 @@ export default class MainScene extends Phaser.Scene {
       player.rotation = Phaser.Math.Angle.Normalize(angle + Math.PI / 2);
       reticle.body.velocity.x = player.body.velocity.x;
       reticle.body.velocity.y = player.body.velocity.y;
+      this.player.textName.x = player.x;
+      this.player.textName.y = player.y - 60;
 
       this.constrainVelocity(player, 500);
       this.constrainReticle(reticle, 450);
@@ -162,6 +164,7 @@ export default class MainScene extends Phaser.Scene {
 
   addNewPlayer({ id, x, y, angle, health, name, team }) {
     this.playerMap[id] = this.physics.add.sprite(x, y, team == 'blue' ? 'blueTeam' : 'redTeam'); //.setActive(true).setVisible(true);
+    this.playerMap[id].textName = this.add.text(x, y - 60, name, { color: 'white', fontFamily: 'Arial', fontSize: '20px'});
     this.playerMap[id].rotation = angle;
     this.playerMap[id].health = health;
     this.playerMap[id].id = id;
@@ -292,6 +295,9 @@ export default class MainScene extends Phaser.Scene {
 
             player.x = players[i].x;
             player.y = players[i].y;
+            player.textName.x = player.x;
+            player.textName.y = player.y - 60;
+            
             player.rotation = players[i].angle
             const bullets = players[i].bullets
             if (bullets && bullets.length) {
